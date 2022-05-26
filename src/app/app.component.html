@@ -1,0 +1,29 @@
+<h1>My Todos</h1>
+<div class="container">
+  <input type="text" #newTodo/>
+
+  <button type="button"  class="btn btn-dark" (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
+  
+</div>
+
+
+<table class="table table-dark table-striped">
+  <tr>
+    <th>Label</th>
+    <th>Priority</th>
+    <th>Done</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let todo of todos ">
+  <td>{{todo.label}}</td>
+   <td>{{todo.priority}}</td>
+   <td>{{todo.done ? '&#10003;' : '&#10005;'}}</td>
+   <td>
+    
+     
+
+<button type="button" class="btn btn-dark" (click)="deleteTodo(todo)">Delete</button>
+
+   </td>
+  </tr>
+</table>
